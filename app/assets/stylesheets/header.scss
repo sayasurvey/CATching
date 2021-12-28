@@ -1,0 +1,15 @@
+.header-background{
+  background-image: image-url("header.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+}
+
+.title-text{
+  width: 100%;
+  padding-left: 40%;
+  font-size: 150%;
+  color: #333333;
+  text-shadow:1px 0 white;
+}
