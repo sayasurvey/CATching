@@ -1,0 +1,14 @@
+<div class='col-sm-12 col-lg-4 mb-3'>
+	<div id='board-id-<%= board.id %>'>
+		<div class='card'>
+			<div class="embed-responsive embed-responsive-16by9">
+				<img src="https://img.youtube.com/vi/<%= board.movie_url.last(11) %>/maxresdefault.jpg" class="embed-responsive-item">
+			</div>
+			<div class='card-body'>
+				<h5 class='card-title'><%= board.title %></h5>
+				<p class='card-text'><%= board.content %></p>
+				<%= link_to '編集', edit_board_path(board), class: 'btn btn-primary' %>
+			</div>
+		</div>
+	</div>
+</div>

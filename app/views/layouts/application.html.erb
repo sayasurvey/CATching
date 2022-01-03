@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CATching</title>
+    <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +11,7 @@
 
   <body>
     <%= render 'shared/header' %>
+    <%= render 'shared/flash_message' %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>

@@ -1,0 +1,16 @@
+<%= form_with(model: @board, local: true) do |f| %>
+  
+  <div class='form-group'>
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class='form-group'>
+    <%= f.label :content, "説明欄" %>
+    <%= f.text_area :content, class: 'form-control', rows: 10 %>
+  </div>
+  <div class='form-group'>
+    <%= f.label :movie_url, "YouTubeのURL"%>
+    <%= f.text_field :movie_url, class: 'form-control' %>
+  </div>
+  <%= f.submit %>
+<% end %>
