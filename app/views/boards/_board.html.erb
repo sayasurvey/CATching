@@ -2,12 +2,15 @@
 	<div id='board-id-<%= board.id %>'>
 		<div class='card'>
 			<div class="embed-responsive embed-responsive-16by9">
-				<img src="https://img.youtube.com/vi/<%= board.movie_url.last(11) %>/maxresdefault.jpg" class="embed-responsive-item">
+				<iframe src="https://www.youtube.com/embed/<%= board.movie_url.last(11) %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 			<div class='card-body'>
 				<h5 class='card-title'><%= board.title %></h5>
 				<p class='card-text'><%= board.content %></p>
-				<%= link_to '編集', edit_board_path(board), class: 'btn btn-primary' %>
+				<div class='text-right'>
+					<%= link_to '編集', edit_board_path(board), class: 'btn-flat-border' %>
+					<%= link_to '詳細', board_path(board), class: 'btn-flat-border' %>
+				</div>
 			</div>
 		</div>
 	</div>

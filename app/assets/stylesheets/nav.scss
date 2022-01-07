@@ -1,0 +1,13 @@
+.navbar{
+  width: 100%;
+  height: 61px;
+
+  a, a:hover{
+    text-decoration: none;
+    color: white;
+  }
+
+  .active{
+    border-bottom: 5px solid #ffffff;
+  }
+}

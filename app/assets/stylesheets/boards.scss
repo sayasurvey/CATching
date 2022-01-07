@@ -3,10 +3,35 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .title{
-  color: #6b6d6e;
+  color: #4d4e4f;
   text-align: center;
   padding: 0.25em;
   border-top: solid 2px #000000;
   border-bottom: solid 2px #000000;
-  background: repeating-linear-gradient(-45deg, #ffffff, #ffffff 3px,#ced2d6 3px, #ced2d6 7px);
+  background: repeating-linear-gradient(-45deg, #ffffff, #ffffff 3px,#e1e5e9 3px, #e1e5e9 7px);
+}
+
+.content-text{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background: repeating-linear-gradient(-45deg, #ffffff, #ffffff 3px,#e9ecf0 3px, #e9ecf0 7px);
+}
+.content-text p {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #5c5e60;
+  border: solid 2px #5c5e60;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-flat-border:hover {
+  background: #5c5e60;
+  color: white;
 }
