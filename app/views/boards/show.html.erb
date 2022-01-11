@@ -8,10 +8,20 @@
       <div class='embed-responsive embed-responsive-16by9'>
 	      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= @board.movie_url.last(11) %>" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
+      
       <% if @board.content.present?%>
         <div class='content-text'>
           <h4>説明</h4>
           <%= safe_join(@board.content.split("\n"),tag(:br)) %>
+        </div>
+      <% end %>
+      
+      <% if @tags.present? %>
+        <h4>タグ</h4>
+        <div class='btn-group'>
+          <% @tags.each do |tag| %>
+            <%=link_to "#{tag.name}(#{tag.taggings_count})", '#', class: 'btn-flat-border mx-1' %>
+          <% end %>
         </div>
       <% end %>
     </div>

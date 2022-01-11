@@ -3,11 +3,12 @@ class BoardsController < ApplicationController
 
   # GET /boards or /boards.json
   def index
-    @boards = Board.all
   end
 
   # GET /boards/1 or /boards/1.json
-  def show; end
+  def show
+    @tags = @board.tag_counts_on(:tags)
+  end
 
   # GET /boards/new
   def new
@@ -52,6 +53,6 @@ class BoardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def board_params
-      params.require(:board).permit(:movie_url, :title, :content)
+      params.require(:board).permit(:movie_url, :title, :content, :tag_list)
     end
 end
