@@ -8,6 +8,10 @@ class BoardsController < ApplicationController
 
   # GET /boards/1 or /boards/1.json
   def show
+    @cat_types = @board.tag_counts_on(:cat_types)
+    @hair_colors = @board.tag_counts_on(:hair_colors)
+    @characters = @board.tag_counts_on(:characters)
+    @length_of_legs = @board.tag_counts_on(:length_of_legs)
     @tags = @board.tag_counts_on(:tags)
   end
 
@@ -54,6 +58,6 @@ class BoardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def board_params
-      params.require(:board).permit(:movie_url, :title, :content, :tag_list)
+      params.require(:board).permit(:movie_url, :title, :content, :cat_type_list, :hair_color_list, :character_list, :length_of_leg_list, :tag_list)
     end
 end
