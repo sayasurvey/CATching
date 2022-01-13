@@ -35,3 +35,46 @@
   background: #5c5e60;
   color: white;
 }
+
+#sform{
+  position:relative;
+  max-width:300px;
+  margin-bottom:20px;
+}
+
+#sbox{
+  height:50px;
+  width: 300px;
+  left:0;
+  top:0;
+  border-radius:25px;
+  outline:0;
+  background:#eee;
+}
+
+#sbtn{
+  height:50px;
+  width:50px;
+  position:absolute;
+  left:250px;
+  top:0;
+  background:#5c5e60;
+  color:#fff;
+  border:none;
+  border-radius:0 25px 25px 0;
+}
+
+#sbtn .fa-search{
+  font-size:20px;
+  position:absolute;
+  top:30%;
+  left:30%;
+}
+
+#sbtn:hover{
+  color:#888;
+}
+
+.sform-wrap{
+  overflow: auto;
+}

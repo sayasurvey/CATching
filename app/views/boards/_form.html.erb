@@ -15,23 +15,23 @@
   <h4>タグ(,区切りで複数登録可能)</h4>
   <div class='form-group'>
     <%= f.label :cat_type_list, "猫の種類" %>
-    <%= f.text_field :cat_type_list, value: @board.cat_type_list.join(',')%>
+    <%= f.text_field :cat_type_list, value: @board.cat_type_list.join(','), class: 'form-control' %>
   </div>
   <div class='form-group'>
     <%= f.label :hair_color_list, "毛色" %>
-    <%= f.text_field :hair_color_list, value: @board.hair_color_list.join(',')%>
+    <%= f.text_field :hair_color_list, value: @board.hair_color_list.join(','), class: 'form-control' %>
   </div>
   <div class='form-group'>
     <%= f.label :length_of_leg_list, "足の長さ" %>
-    <%= f.text_field :length_of_leg_list, value: @board.length_of_leg_list.join(',')%>
+    <%= f.text_field :length_of_leg_list, value: @board.length_of_leg_list.join(','), class: 'form-control' %>
   </div>
   <div class='form-group'>
     <%= f.label :character_list, "性格" %>
-    <%= f.text_field :character_list, value: @board.character_list.join(',')%>
+    <%= f.text_field :character_list, value: @board.character_list.join(','), class: 'form-control' %>
   </div>
   <div class='form-group'>
     <%= f.label :tag_list, "その他" %>
-    <%= f.text_field :tag_list, value: @board.tag_list.join(',')%>
+    <%= f.text_field :tag_list, value: @board.tag_list.join(','), class: 'form-control' %>
   </div>
   <%= f.submit %>
 <% end %>

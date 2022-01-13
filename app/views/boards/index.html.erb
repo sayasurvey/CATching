@@ -1,7 +1,13 @@
 <% content_for(:title, "動画一覧 | CATching") %>
 
-<div class='content m-5'>
-  <h1 class='title p-4'>動画一覧</h1>
+<div class='content mx-5'>
+  <div class='sform-wrap mt-3'>
+    <%= search_form_for(@q, url: boards_path, id: 'sform', class: 'float-right') do |f| %>
+      <%= f.search_field :title_or_content_cont, placeholder: "検索キーワード", id: 'sbox', class: 'px-3' %>
+      <%= f.submit "検索", id: 'sbtn'%>
+    <% end %>
+  </div>
+  <h1 class='title p-4 clear_box'>動画一覧</h1>
   <!-- 掲示板一覧 -->
   <div class='row'>
     <div class='col-12 my-5'>

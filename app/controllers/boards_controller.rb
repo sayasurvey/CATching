@@ -3,7 +3,8 @@ class BoardsController < ApplicationController
 
   # GET /boards or /boards.json
   def index
-    @boards = Board.all
+    @q = Board.ransack(params[:q])
+    @boards = @q.result(disticnt: true)
   end
 
   # GET /boards/1 or /boards/1.json
@@ -49,6 +50,15 @@ class BoardsController < ApplicationController
     @board.destroy!
     redirect_to boards_path, success: '動画情報が削除されました'
   end
+
+  def search
+		#キーワード検索
+		@q = Board.ransack(params[:q])
+		@boards = @q.result(disticnt: true).order("created_at DESC")
+
+		#タグ検索
+		@tag_search = Board.tagged_with(params[:search])
+	end
 
   private
     # Use callbacks to share common setup or constraints between actions.
