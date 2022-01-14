@@ -1,10 +1,10 @@
 class BoardsController < ApplicationController
   before_action :set_board, only: %i[ show edit update destroy ]
+  before_action :set_search
 
   # GET /boards or /boards.json
   def index
-    @q = Board.ransack(params[:q])
-    @boards = @q.result(distinct: true).order(created_at: :desc).page(params[:page])
+    @boards = Board.page(params[:page]).order(created_at: :desc)
   end
 
   # GET /boards/1 or /boards/1.json
@@ -51,13 +51,15 @@ class BoardsController < ApplicationController
     redirect_to boards_path, success: '動画情報が削除されました'
   end
 
-  def search
-		#キーワード検索
-		@q = Board.ransack(params[:q])
-		@boards = @q.result(disticnt: true).order("created_at DESC")
-
-		#タグ検索
-		@tag_search = Board.tagged_with(params[:search])
+  def set_search
+    if params[:q]!= nil
+      params[:q]['title_or_content_or_cat_types_name_or_hair_colors_name_or_characters_name_or_length_of_legs_name_or_tags_name_cont_all'] = params[:q]['title_or_content_or_cat_types_name_or_hair_colors_name_or_characters_name_or_length_of_legs_name_or_tags_name_cont_all'].split(/[\s|\p{blank}]+/)
+      @search = Board.ransack(params[:q])
+      @search_boards = @search.result(distinct: true).page(params[:page]).order(created_at: :desc)
+    else
+      @search = Board.ransack(params[:q])
+      @boards = Board.page(params[:page]).order(created_at: :desc)
+    end
 	end
 
   private
