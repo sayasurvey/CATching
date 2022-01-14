@@ -78,3 +78,27 @@
 .sform-wrap{
   overflow: auto;
 }
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  border-radius: 15px;     /*角を丸くする*/
+}
+
+.page-item.active .page-link {
+  background-color: #5c5e60;
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {    
+  border-radius: 15px;    /*角を丸くする*/
+}
+
+.pagination {
+  justify-content: center;
+}
