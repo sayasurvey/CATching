@@ -21,7 +21,7 @@
                 <p>該当記事がありません</p>
               <% end %>
             </div>
-          <div>
+          </div>
           <%= paginate @search_boards %>
         <% else %>
           <% if @boards.present? %>
@@ -29,7 +29,7 @@
               <div class='card-deck col-12'>
                 <%= render @boards %>
               </div>
-            <div>
+            </div>
             <%= paginate @boards %>
           <% else %>
             <p>該当記事がありません</p>
