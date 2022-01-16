@@ -3,7 +3,7 @@
 <div class='content mx-5'>
   <div class='sform-wrap mt-3'>
     <%= search_form_for(@search, url: boards_path, id: 'sform', class: 'float-right') do |f| %>
-      <%= f.text_field :title_or_content_or_cat_types_name_or_hair_colors_name_or_characters_name_or_length_of_legs_name_or_tags_name_cont_all, placeholder: "検索キーワード", id: 'sbox', class: 'px-3' %>
+      <%= f.text_field :title_or_content_or_cat_types_name_or_hair_colors_name_or_characters_name_or_length_of_legs_name_or_tags_name_cont_any, placeholder: "検索キーワード", id: 'sbox', class: 'px-3' %>
       <%= f.submit "検索", id: 'sbtn'%>
     <% end %>
   </div>
@@ -13,8 +13,6 @@
     <div class='col-12 my-5'>
         <% if @search_boards %>
           <div class='row'>
-            <p>検索結果</p>
-            <%= params[:q][:title_or_content_or_cat_types_name_or_hair_colors_name_or_characters_name_or_length_of_legs_name_or_tags_name_cont_all] %>
             <div class='card-deck col-12'>
               <%= render @search_boards, collection: @search_boards%>
               <% if @search_boards.length == 0 %>

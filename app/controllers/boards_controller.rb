@@ -53,7 +53,7 @@ class BoardsController < ApplicationController
 
   def set_search
     if params[:q]!= nil
-      params[:q]['title_or_content_or_cat_types_name_or_hair_colors_name_or_characters_name_or_length_of_legs_name_or_tags_name_cont_all'] = params[:q]['title_or_content_or_cat_types_name_or_hair_colors_name_or_characters_name_or_length_of_legs_name_or_tags_name_cont_all'].split(/[\s|\p{blank}]+/)
+      params[:q]['title_or_content_or_cat_types_name_or_hair_colors_name_or_characters_name_or_length_of_legs_name_or_tags_name_cont_any'] = params[:q]['title_or_content_or_cat_types_name_or_hair_colors_name_or_characters_name_or_length_of_legs_name_or_tags_name_cont_any'].split(/[\s|\p{blank}]+/)
       @search = Board.ransack(params[:q])
       @search_boards = @search.result(distinct: true).page(params[:page]).order(created_at: :desc)
     else
