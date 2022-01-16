@@ -1,6 +1,5 @@
 class BoardsController < ApplicationController
   before_action :set_board, only: %i[ show edit update destroy ]
-  before_action :set_search
 
   # GET /boards or /boards.json
   def index
@@ -50,17 +49,6 @@ class BoardsController < ApplicationController
     @board.destroy!
     redirect_to boards_path, success: '動画情報が削除されました'
   end
-
-  def set_search
-    if params[:q]!= nil
-      params[:q]['title_or_content_or_cat_types_name_or_hair_colors_name_or_characters_name_or_length_of_legs_name_or_tags_name_cont_any'] = params[:q]['title_or_content_or_cat_types_name_or_hair_colors_name_or_characters_name_or_length_of_legs_name_or_tags_name_cont_any'].split(/[\s|\p{blank}]+/)
-      @search = Board.ransack(params[:q])
-      @search_boards = @search.result(distinct: true).page(params[:page]).order(created_at: :desc)
-    else
-      @search = Board.ransack(params[:q])
-      @boards = Board.page(params[:page]).order(created_at: :desc)
-    end
-	end
 
   private
     # Use callbacks to share common setup or constraints between actions.
