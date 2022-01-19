@@ -41,6 +41,10 @@
           <% end %>
         </div>
       <% end %>
+      <% if current_user.own?(@board)%>
+				<%= link_to '編集', edit_board_path(@board), class: 'btn-flat-border' %>
+        <%= link_to '削除', board_path(@board), method: :delete, data: { confirm: '動画情報を削除しますか?'}, class: 'btn btn-danger' %>
+      <% end %>
     </div>
   </div>
 </div>

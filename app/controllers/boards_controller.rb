@@ -50,6 +50,10 @@ class BoardsController < ApplicationController
     redirect_to boards_path, success: '動画情報が削除されました'
   end
 
+  def registration
+    @boards = current_user.boards.all.includes(:user).order(created_at: :desc).page(params[:page])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_board

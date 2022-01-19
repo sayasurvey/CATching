@@ -1,0 +1,26 @@
+<% content_for(:title, "投稿動画一覧|CATching") %>
+
+<div class='content mx-5'>
+  <div class='sform-wrap mt-3'>
+    <%= search_form_for(@search, url: boards_path, id: 'sform', class: 'float-right') do |f| %>
+      <%= f.text_field :title_or_content_or_cat_types_name_or_hair_colors_name_or_characters_name_or_length_of_legs_name_or_tags_name_cont_any, placeholder: "検索キーワード", id: 'sbox', class: 'px-3' %>
+      <%= f.submit "検索", id: 'sbtn'%>
+    <% end %>
+  </div>
+  <h1 class='title p-4 clear_box'>投稿動画一覧</h1>
+  <!-- 掲示板一覧 -->
+  <div class='row'>
+    <div class='col-12 my-5'>
+      <% if @boards.present? %>
+        <div class='row'>
+          <div class='card-deck col-12'>
+            <%= render @boards %>
+          </div>
+        </div>
+        <%= paginate @boards %>
+      <% else %>
+        <p>該当記事がありません</p>
+      <% end %>
+    </div>
+  </div>
+</div>

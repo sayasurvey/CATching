@@ -5,139 +5,179 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.create!(
+  [
+    {
+      name: "admin",
+      email: "sayasurvey@yahoo.co.jp",
+      password: "saya3133",
+      password_confirmation: "saya3133"
+    },
+
+    {
+      name: "test",
+      email: "test@yahoo.co.jp",
+      password: "test",
+      password_confirmation: "test"
+    }
+  ]
+)
+
 
 Board.create!(
   [
     {
       title: "子猫のお尻が臭すぎて気絶してしまった猫",
       content: "相当臭かったみたいです ひっくり返ったまま固まってしまってます",
-      movie_url: "https://www.youtube.com/watch?v=lW7W99QYbrM"
+      movie_url: "https://www.youtube.com/watch?v=lW7W99QYbrM",
+      user: User.first
     },
 
     {
       title: "後輩猫からの愛情表現が激しすぎてたじたじな先住猫",
       content: "メルがプリンに甘えるが、愛情表現が激しすぎて力加減ができない場面も…",
-      movie_url: "https://www.youtube.com/watch?v=RjimRo_WNbk"
+      movie_url: "https://www.youtube.com/watch?v=RjimRo_WNbk",
+      user: User.first
     },
 
     {
       title: "ピアノに叩かれながらも寝続ける猫",
       content: "鍵盤の動きに合わせて猫の体も上下に振動するも退く気配のない猫 猫の可愛さと飼い主の美しい音色も一緒に楽しめる動画",
-      movie_url: "https://www.youtube.com/watch?v=4t0I10eMoJU"
+      movie_url: "https://www.youtube.com/watch?v=4t0I10eMoJU",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=S2Vem8wk4fY"
+      movie_url: "https://www.youtube.com/watch?v=S2Vem8wk4fY",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=6QD3NN01sYo"
+      movie_url: "https://www.youtube.com/watch?v=6QD3NN01sYo",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=MtK1vNca5mU"
+      movie_url: "https://www.youtube.com/watch?v=MtK1vNca5mU",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=XmsU7tLyIac"
+      movie_url: "https://www.youtube.com/watch?v=XmsU7tLyIac",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=djp_hurOBdE&t=55s"
+      movie_url: "https://www.youtube.com/watch?v=djp_hurOBdE&t=55s",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=iFkxCHHhIS4"
+      movie_url: "https://www.youtube.com/watch?v=iFkxCHHhIS4",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=Au9XlHCdefs"
+      movie_url: "https://www.youtube.com/watch?v=Au9XlHCdefs",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=smvcWcuUBFE"
+      movie_url: "https://www.youtube.com/watch?v=smvcWcuUBFE",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=jBFZIc11wKU"
+      movie_url: "https://www.youtube.com/watch?v=jBFZIc11wKU",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=pPiu-5CNyyI"
+      movie_url: "https://www.youtube.com/watch?v=pPiu-5CNyyI",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=0jw_okUV9S0"
+      movie_url: "https://www.youtube.com/watch?v=0jw_okUV9S0",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=LStfxrTqLV0"
+      movie_url: "https://www.youtube.com/watch?v=LStfxrTqLV0",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=hs4SRd51Wu0"
+      movie_url: "https://www.youtube.com/watch?v=hs4SRd51Wu0",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=ORrvGmCcnJc"
+      movie_url: "https://www.youtube.com/watch?v=ORrvGmCcnJc",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=XBBCPBxSzvI"
+      movie_url: "https://www.youtube.com/watch?v=XBBCPBxSzvI",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=L2HxNfHGdgY"
+      movie_url: "https://www.youtube.com/watch?v=L2HxNfHGdgY",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=iv8XSTNxkNY"
+      movie_url: "https://www.youtube.com/watch?v=iv8XSTNxkNY",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=9HU0hvakAmo"
+      movie_url: "https://www.youtube.com/watch?v=9HU0hvakAmo",
+      user: User.first
     },
 
     {
       title: "test",
       content: "test",
-      movie_url: "https://www.youtube.com/watch?v=2--lmNFbI1M"
+      movie_url: "https://www.youtube.com/watch?v=2--lmNFbI1M",
+      user: User.second
     }
   ]
 )
