@@ -8,7 +8,7 @@
 				<h5 class='card-title'><%= board.title %></h5>
 				<p class='card-text'><%= board.content %></p>
 				<div class='text-right'>
-					<% if current_user.own?(board)%>
+					<% if logged_in? && current_user.own?(board)%>
 						<%= link_to '編集', edit_board_path(board), class: 'btn-flat-border' %>
 					<% end %>
 					<%= link_to '詳細', board_path(board), class: 'btn-flat-border' %>
