@@ -9,6 +9,7 @@ class BoardsController < ApplicationController
   # GET /boards/1 or /boards/1.json
   def show
     @board = Board.find(params[:id])
+    #各タグのデータ
     @cat_types = @board.tag_counts_on(:cat_types)
     @hair_colors = @board.tag_counts_on(:hair_colors)
     @characters = @board.tag_counts_on(:characters)
