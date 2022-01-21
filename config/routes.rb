@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'boards/registration', to: 'boards#registration'
+  get 'boards/search', to: 'boards#search'
 
   resources :users, only: %i[new create]
   resources :boards

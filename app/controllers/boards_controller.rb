@@ -56,6 +56,12 @@ class BoardsController < ApplicationController
     @boards = current_user.boards.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
+  def search
+    tags = Board.tags_on(:tags)
+    cat_types = ActsAsTaggableOn::Tag.includes(:tagging)
+    byebug
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_board
