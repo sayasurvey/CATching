@@ -10,19 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_19_055844) do
+ActiveRecord::Schema.define(version: 2022_01_21_065442) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "boards", force: :cascade do |t|
     t.string "movie_url"
     t.string "title"
     t.string "content"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_boards_on_user_id"
   end
 
-  create_table "taggings", force: :cascade do |t|
+  create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
     t.integer "taggable_id"
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 2022_01_19_055844) do
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "tags", id: :serial, force: :cascade do |t|
     t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -59,4 +62,6 @@ ActiveRecord::Schema.define(version: 2022_01_19_055844) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "boards", "users"
+  add_foreign_key "taggings", "tags"
 end
