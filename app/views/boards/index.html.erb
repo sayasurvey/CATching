@@ -21,6 +21,16 @@
             </div>
           </div>
           <%= paginate @search_boards %>
+        <% elsif @board != nil %>
+          <div class='row'>
+            <div class='card-deck col-12'>
+              <%= render @board, collection: @board%>
+              <% if @board.length == 0 %>
+                <p>該当記事がありません</p>
+              <% end %>
+            </div>
+          </div>
+          <%= paginate @board %>
         <% else %>
           <% if @boards.present? %>
             <div class='row'>

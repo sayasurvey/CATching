@@ -4,6 +4,9 @@ class BoardsController < ApplicationController
   # GET /boards or /boards.json
   def index
     @boards = Board.page(params[:page]).order(created_at: :desc)
+    if params[:tag] != nil
+      @board = Board.tagged_with(params[:tag]).page(params[:page])
+    end
   end
 
   # GET /boards/1 or /boards/1.json
@@ -59,7 +62,6 @@ class BoardsController < ApplicationController
   def search
     tags = Board.tags_on(:tags)
     cat_types = ActsAsTaggableOn::Tag.includes(:tagging)
-    byebug
   end
 
   private

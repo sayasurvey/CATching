@@ -18,33 +18,35 @@
       
       <% if @cat_types.present? || @hair_colors.present? || @characters.present? || @length_of_legs.present? || @tags.present? %>
         <h4>タグ</h4>
-        <h5>猫の種類<h5>
         <div class='btn-group'>
           <% @cat_types.each do |cat_type| %>
-            <%=link_to "#{cat_type.name}(#{cat_type.taggings_count})", '#', class: 'btn-flat-border mx-1' %>
+            <%=link_to "#{cat_type.name}(#{cat_type.taggings_count})", boards_path(tag: cat_type.name), class: 'btn-flat-border mx-1' %>
           <% end %>
 
           <% @hair_colors.each do |hair_color| %>
-            <%=link_to "#{hair_color.name}(#{hair_color.taggings_count})", '#', class: 'btn-flat-border mx-1' %>
+            <%=link_to "#{hair_color.name}(#{hair_color.taggings_count})", boards_path(tag: hair_color.name), class: 'btn-flat-border mx-1' %>
           <% end %>
 
           <% @characters.each do |character| %>
-            <%=link_to "#{character.name}(#{character.taggings_count})", '#', class: 'btn-flat-border mx-1' %>
+            <%=link_to "#{character.name}(#{character.taggings_count})", boards_path(tag: character.name), class: 'btn-flat-border mx-1' %>
           <% end %>
 
           <% @length_of_legs.each do |length_of_leg| %>
-            <%=link_to "#{length_of_leg.name}(#{length_of_leg.taggings_count})", '#', class: 'btn-flat-border mx-1' %>
+            <%=link_to "#{length_of_leg.name}(#{length_of_leg.taggings_count})", boards_path(tag: length_of_leg.name), class: 'btn-flat-border mx-1' %>
           <% end %>
 
           <% @tags.each do |tag| %>
-            <%=link_to "#{tag.name}(#{tag.taggings_count})", '#', class: 'btn-flat-border mx-1' %>
+            <%=link_to "#{tag.name}(#{tag.taggings_count})", boards_path(tag: tag.name), class: 'btn-flat-border mx-1' %>
           <% end %>
         </div>
       <% end %>
-      <% if current_user.own?(@board)%>
-				<%= link_to '編集', edit_board_path(@board), class: 'btn-flat-border' %>
-        <%= link_to '削除', board_path(@board), method: :delete, data: { confirm: '動画情報を削除しますか?'}, class: 'btn btn-danger' %>
-      <% end %>
+
+      <div class='btn-group float-right'>
+        <% if current_user.own?(@board)%>
+          <%= link_to '編集', edit_board_path(@board), class: 'btn-flat-border' %>
+          <%= link_to '削除', board_path(@board), method: :delete, data: { confirm: '動画情報を削除しますか?'}, class: 'btn btn-danger' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
