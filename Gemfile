@@ -67,3 +67,5 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'ransack'
 gem 'kaminari'
 gem 'sorcery'
+gem "dotenv-rails"
+gem 'rails-i18n', '~> 5.1'
