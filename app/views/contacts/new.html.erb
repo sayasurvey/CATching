@@ -4,7 +4,10 @@
   <h1 class='title p-4'>お問い合わせ</h1>
   <div class='row'>
     <div class='col-lg-8 offset-lg-2 py-5'>
+      <p>ツイッター<a href="https://twitter.com/runteq_sayaka">@Runteq_sayaka<a>のDMからでもお問い合わせいただけます。</p>
+      <p class='pb-4'>使い方の不明点や不具合はもちろん、要望等も大歓迎です。</p>
       <%= form_for @contact, url: confirm_path do |f| %>
+        <%= render 'layouts/error_messages', model: f.object%>
         <div class='form-group'>
           <%= f.label :name,'お名前※' %>
           <%= f.text_field :name, class: 'form-control' %>
@@ -15,7 +18,7 @@
         </div>
         <div class='form-group'>
           <%= f.label :message,'メッセージ※' %>
-          <%= f.text_area :message, size: '10×10', class: 'form-control' %>
+          <%= f.text_area :message, rows: 10, class: 'form-control' %>
         </div>
         <%= f.submit '入力内容確認', class: 'btn-flat-border' %>
       <% end %>

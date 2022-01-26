@@ -1,5 +1,5 @@
 <%= form_with(model: @board, local: true) do |f| %>
-  
+  <%= render 'layouts/error_messages', model: f.object%>
   <div class='form-group'>
     <%= f.label :title, "タイトル" %>
     <%= f.text_field :title, class: 'form-control' %>
@@ -9,10 +9,10 @@
     <%= f.text_area :content, class: 'form-control', rows: 10 %>
   </div>
   <div class='form-group'>
-    <%= f.label :movie_url, "YouTubeのURL"%>
+    <%= f.label :movie_url, "YouTubeのURL  (https://www.youtube.com/watch?v=11桁の動画ID)"%>
     <%= f.text_field :movie_url, class: 'form-control' %>
   </div>
-  <h4>タグ(,又は空白区切り)</h4>
+  <h4 class='pt-3'>タグ(,又は空白区切り)</h4>
   <div class='form-group'>
     <%= f.label :cat_type_list, "猫の種類" %>
     <%= f.text_field :cat_type_list, value: @board.cat_type_list.join(' '), class: 'form-control' %>
@@ -33,5 +33,5 @@
     <%= f.label :tag_list, "その他" %>
     <%= f.text_field :tag_list, value: @board.tag_list.join(' '), class: 'form-control' %>
   </div>
-  <%= f.submit %>
+  <%= f.submit class: 'btn-flat-border'%>
 <% end %>

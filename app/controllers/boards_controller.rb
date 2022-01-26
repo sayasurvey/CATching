@@ -30,11 +30,11 @@ class BoardsController < ApplicationController
 
   # POST /boards or /boards.json
   def create
-    @board = Board.new(board_params)
+    @board = current_user.boards.new(board_params)
     if @board.save
-      redirect_to boards_path, success: '動画情報の登録ができました'
+      redirect_to boards_path, success: t('defaults.message.created', item: Board.model_name.human)
     else
-      flash.now['danger'] = '動画情報の登録ができませんでした'
+      flash.now['danger'] = t('defaults.message.not_created', item: Board.model_name.human)
       render :new
     end
   end
@@ -42,9 +42,9 @@ class BoardsController < ApplicationController
   # PATCH/PUT /boards/1 or /boards/1.json
   def update
     if @board.update(board_params)
-      redirect_to board_path(params[:id]), success: '動画情報が更新されました'
+      redirect_to board_path(params[:id]), success: t('defaults.message.updated', item: Board.model_name.human)
     else
-      flash.now['danger'] = '動画情報が更新されませんでした'
+      flash.now['danger'] = t('default.massage.not_updated', item: Board.model_name.human)
       render :edit
     end
   end
@@ -52,7 +52,7 @@ class BoardsController < ApplicationController
   # DELETE /boards/1 or /boards/1.json
   def destroy
     @board.destroy!
-    redirect_to boards_path, success: '動画情報が削除されました'
+    redirect_to boards_path, success: t('defaults.message.deleted', item: Board.model_name.human)
   end
 
   def registration
