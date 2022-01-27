@@ -8,7 +8,13 @@
       <div class='embed-responsive embed-responsive-16by9'>
 	      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= @board.movie_url.last(11) %>" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
-      
+      <div class='float-right p-1'>
+        <%= link_to "https://twitter.com/share?url=#{ request.url }&text=#{ @board.title }の猫動画を押してます！%0a押し猫を探すならCATching", class: 'btn btn-default ', target: '_blank', style: 'border: solid 2px #5c5e60;' do %>
+          <i class='fab fa-twitter' style='color: #3399FF;'></i>
+          Twitterでシェア
+        <% end %>
+      </div>
+
       <% if @board.content.present?%>
         <div class='content-text'>
           <h4>説明</h4>
@@ -18,7 +24,7 @@
       
       <% if @cat_types.present? || @hair_colors.present? || @characters.present? || @length_of_legs.present? || @tags.present? %>
         <h4>タグ</h4>
-        <div class='btn-group'>
+        <div class='tag-group'>
           <% @cat_types.each do |cat_type| %>
             <%=link_to "#{cat_type.name}(#{cat_type.taggings_count})", boards_path(tag: cat_type.name), class: 'btn-flat-border mx-1' %>
           <% end %>

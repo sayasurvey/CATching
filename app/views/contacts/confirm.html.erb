@@ -21,17 +21,17 @@
         </tbody>
       </table>
 
-      <%= form_for(@contact) do |f| %>
+      <%= form_for @contact do |f| %>
         <%= f.hidden_field :name %>
         <%= f.hidden_field :email %>
         <%= f.hidden_field :message %>
-        <div><%= f.submit '送信' %></div>
+        <div class='float-right my-1'><%= f.submit '送信', class: 'btn-flat-border' %></div>
       <% end %>
       <%= form_for @contact, url: back_path do |f| %>
         <%= f.hidden_field :name %>
         <%= f.hidden_field :email %>
         <%= f.hidden_field :message %>
-        <div><%= f.submit '入力画面に戻る' %></div>
+        <div class='my-1'><%= f.submit '入力画面に戻る', class: 'btn-flat-border' %></div>
       <% end %>
     </div>
   </div>
