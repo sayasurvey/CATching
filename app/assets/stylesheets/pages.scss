@@ -1,0 +1,34 @@
+.pages{
+  a.list-of-rules {
+    display: flex;
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    background: #5c5e60;
+    padding: 15px 20px 15px 40px;
+    flex-direction: column;
+  }
+  a.list-of-rules::before {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    content: '';
+    width: 8px;
+    height: 8px;
+    margin: auto;
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  h3{
+    border-left: 10px solid #5c5e60;
+    margin-top: 30px;
+  }
+
+  a{
+    display: flex;
+    flex-direction: column;
+  }
+}

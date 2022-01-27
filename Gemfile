@@ -69,3 +69,4 @@ gem 'kaminari'
 gem 'sorcery'
 gem "dotenv-rails"
 gem 'rails-i18n', '~> 5.1'
+gem 'high_voltage'
