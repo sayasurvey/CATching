@@ -71,3 +71,4 @@ gem "dotenv-rails"
 gem 'rails-i18n', '~> 5.1'
 gem 'high_voltage'
 gem 'font-awesome-sass'
+gem 'meta-tags'
