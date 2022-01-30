@@ -1,10 +1,9 @@
 <header>
   <nav class='navbar bg-secondary justify-content-end'>
     <ul class='nav'>
-        <li><%= active_link_to "動画一覧", boards_path, class: 'nav-link' %></li>
-        <li><%= active_link_to '詳細検索', '#', class: 'nav-link' %></li>
-        <li><%= active_link_to '問い合わせ', '#', class: 'nav-link' %></li>
-        <li><%= active_link_to 'ログイン', login_path, class: 'nav-link' %></li>
+        <li><%= active_link_to "動画一覧", boards_path, class: 'nav-link', active: :exclusive %></li>
+        <li><%= active_link_to '問い合わせ', new_contact_path, class: 'nav-link', active: :exclusive %></li>
+        <li><%= active_link_to 'ログイン', login_path, class: 'nav-link', active: :exclusive %></li>
     </ul>
   </nav>
 

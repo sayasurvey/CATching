@@ -12,7 +12,7 @@ ja:
       no_result: '該当動画ありません'
       deleted: "%{item}を削除しました"
       updated: "%{item}を更新しました"
-      no_updated: "%{item}を更新できませんでした"
+      not_updated: "%{item}を更新できませんでした"
       delete_confirm: '削除しますか'
       not_authorized: '権限がありません'
   users:
@@ -23,3 +23,5 @@ ja:
     create:
       success: 'ログインしました'
       fail: 'ログインに失敗しました'
+    destroy:
+      success: ログアウトしました

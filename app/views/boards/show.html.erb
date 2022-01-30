@@ -8,15 +8,18 @@
       <div class='embed-responsive embed-responsive-16by9'>
 	      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= @board.movie_url.last(11) %>" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
-      <div class='float-right p-1'>
-        <%= link_to "https://twitter.com/share?url=#{ request.url }&text=#{ @board.title }の猫動画を押してます！%0a押し猫を探すならCATching", class: 'btn btn-default ', target: '_blank', style: 'border: solid 2px #5c5e60;' do %>
-          <i class='fab fa-twitter' style='color: #3399FF;'></i>
-          Twitterでシェア
-        <% end %>
+
+      <div class='sns-btn'>
+        <div class='float-right p-1'>
+          <%= link_to "https://twitter.com/share?url=#{ request.url }&text=#{ @board.title }の猫動画を押してます！%0a押し猫を探すならCATching", class: 'btn btn-default ', target: '_blank', style: 'border: solid 2px #5c5e60;' do %>
+            <i class='fab fa-twitter' style='color: #3399FF;'></i>
+            Twitterでシェア
+          <% end %>
+        </div>
       </div>
 
       <% if @board.content.present?%>
-        <div class='content-text'>
+        <div class='content-text mb-1'>
           <h4>説明</h4>
           <%= safe_join(@board.content.split("\n"),tag(:br)) %>
         </div>

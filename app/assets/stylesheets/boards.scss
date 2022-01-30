@@ -13,7 +13,7 @@
 
 .content-text{
   padding: 0.5em 1em;
-  margin: 3em 0;
+  margin-top: 3em;
   background: repeating-linear-gradient(-45deg, #ffffff, #ffffff 3px,#e9ecf0 3px, #e9ecf0 7px);
 }
 .content-text p {
@@ -123,4 +123,8 @@
 
 .card{
   flex: 1 0 auto;
+}
+
+.float-right{
+  clear:  both;
 }
