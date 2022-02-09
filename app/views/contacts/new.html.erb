@@ -7,7 +7,7 @@
       <p>ツイッター<a href="https://twitter.com/runteq_sayaka">@Runteq_sayaka<a>のDMからでもお問い合わせいただけます。</p>
       <p class='pb-4'>使い方の不明点や不具合はもちろん、要望等も大歓迎です。</p>
       <%= form_for @contact, url: confirm_path do |f| %>
-        <%= render 'layouts/error_messages', model: f.object%>
+        <%= render 'shared/error_messages', model: f.object%>
         <div class='form-group'>
           <%= f.label :name,'お名前※' %>
           <%= f.text_field :name, class: 'form-control' %>

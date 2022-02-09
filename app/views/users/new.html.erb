@@ -5,7 +5,7 @@
   <div class='row'>
     <div class='col-lg-8 offset-lg-2 py-5'>
       <%= form_with model: @user, local: true do |f| %>
-        <%= render 'layouts/error_messages', model: f.object%>
+        <%= render 'shared/error_messages', model: f.object%>
         <div class='form-group'>
           <%= f.label :name %>
           <%= f.text_field :name, class: 'form-control' %>
