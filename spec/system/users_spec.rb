@@ -18,8 +18,8 @@ RSpec.describe "Users", type: :system do
     it '1-2:同じメールアドレスのユーザーは新規登録できない' do
       user = create(:user)
       visit new_user_path
-      fill_in '名前', with: 'test-user1'
-      fill_in 'メールアドレス', with: 'test1@gmail.com'
+      fill_in '名前', with: user.name
+      fill_in 'メールアドレス', with: user.email
       fill_in 'パスワード', with: 'password'
       fill_in 'パスワード確認', with: 'password'
       click_button '登録'

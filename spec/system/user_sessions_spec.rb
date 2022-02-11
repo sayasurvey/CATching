@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "UserSessions", type: :system do
-  let!(:user) { create :user }
+  let(:user) { create :user }
 
   describe 'ログイン画面' do
     it 'ログインができること' do
