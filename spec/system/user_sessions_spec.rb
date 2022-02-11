@@ -8,9 +8,7 @@ RSpec.describe "UserSessions", type: :system do
       visit login_path
       fill_in 'メールアドレス', with: user.email
       fill_in 'パスワード', with: 'password'
-      within('input#login.btn-flat-border') do
-        click_button 'ログイン'
-      end
+      page.first(".btn-flat-border").click
       expect(current_path).not_to eq(login_path)
       expect(page).to have_content('ログインしました')
       expect(current_path).to eq(boards_path)
@@ -20,9 +18,7 @@ RSpec.describe "UserSessions", type: :system do
       visit login_path
       fill_in 'メールアドレス', with: user.email
       fill_in 'パスワード', with: 'pass'
-      within('input#login.btn-flat-border') do
-        click_button 'ログイン'
-      end
+      page.first(".btn-flat-border").click
       expect(current_path).to eq(login_path)
       expect(page).to have_content('ログインに失敗しました')
     end
@@ -33,12 +29,11 @@ RSpec.describe "UserSessions", type: :system do
       visit login_path
       fill_in 'メールアドレス', with: user.email
       fill_in 'パスワード', with: 'password'
-      within('input#login.btn-flat-border') do
-        click_button 'ログイン'
-      end
+      page.first(".btn-flat-border").click
       expect(page).to have_content('ログインしました')
       expect(current_path).to eq(boards_path)
-      click_button 'ログアウト'
+      click_link 'ログアウト'
+      expect(current_path).to eq(boards_path)
     end
   end
 end
