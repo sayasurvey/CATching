@@ -2,7 +2,6 @@ class BoardsController < ApplicationController
   before_action :set_board, only: %i[ edit update destroy ]
   before_action :require_login, only: %i[ new edit create update destroy registration ]
 
-  # GET /boards or /boards.json
   def index
     @boards = Board.page(params[:page]).order(created_at: :desc)
     if params[:tag] != nil
@@ -10,7 +9,6 @@ class BoardsController < ApplicationController
     end
   end
 
-  # GET /boards/1 or /boards/1.json
   def show
     @board = Board.find(params[:id])
     #各タグのデータ
@@ -21,15 +19,12 @@ class BoardsController < ApplicationController
     @tags = @board.tag_counts_on(:tags)
   end
 
-  # GET /boards/new
   def new
     @board = Board.new
   end
 
-  # GET /boards/1/edit
   def edit; end
 
-  # POST /boards or /boards.json
   def create
     @board = current_user.boards.new(board_params)
     if @board.save
@@ -40,7 +35,6 @@ class BoardsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /boards/1 or /boards/1.json
   def update
     if @board.update(board_params)
       redirect_to board_path(params[:id]), success: t('defaults.message.updated', item: Board.model_name.human)
@@ -50,7 +44,6 @@ class BoardsController < ApplicationController
     end
   end
 
-  # DELETE /boards/1 or /boards/1.json
   def destroy
     @board.destroy!
     redirect_to boards_path, success: t('defaults.message.deleted', item: Board.model_name.human)
@@ -66,12 +59,10 @@ class BoardsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_board
       @board = current_user.boards.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def board_params
       params.require(:board).permit(:movie_url, :title, :content, :cat_type_list, :hair_color_list, :character_list, :length_of_leg_list, :tag_list)
     end
