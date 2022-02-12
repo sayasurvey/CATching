@@ -8,9 +8,10 @@
     <% end %>
   </div>
   <h1 class='title p-4 clear_box'>動画一覧</h1>
-  <!-- 掲示板一覧 -->
-  <div class='row'>
-    <div class='col-12 my-5'>
+    <!-- 掲示板一覧 -->
+    <div class='row'>
+      <div class='col-12 my-5'>
+        <!-- キーワード検索のとき -->
         <% if @search_boards %>
           <div class='row'>
             <div class='card-deck col-12'>
@@ -21,6 +22,7 @@
             </div>
           </div>
           <%= paginate @search_boards %>
+        <!-- タグ検索のとき -->
         <% elsif @board != nil %>
           <div class='row'>
             <div class='card-deck col-12'>
@@ -31,6 +33,7 @@
             </div>
           </div>
           <%= paginate @board %>
+        <!-- キーワード検索もタグ検索もしていないとき -->
         <% else %>
           <% if @boards.present? %>
             <div class='row'>
