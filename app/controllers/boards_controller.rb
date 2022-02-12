@@ -5,7 +5,7 @@ class BoardsController < ApplicationController
   def index
     @boards = Board.page(params[:page]).order(created_at: :desc)
     if params[:tag] != nil
-      @board = Board.tagged_with(params[:tag]).page(params[:page])
+      @board = Board.tagged_with(params[:tag]).page(params[:page]).order(created_at: :desc)
     end
   end
 
@@ -55,7 +55,6 @@ class BoardsController < ApplicationController
 
   def search
     tags = Board.tags_on(:tags)
-    cat_types = ActsAsTaggableOn::Tag.includes(:tagging)
   end
 
   private
