@@ -1,19 +1,19 @@
-<div class="footerFixed">
-  <header>
-    <nav class='navbar bg-secondary justify-content-end'>
-      <ul class='nav'>
-          <li><%= active_link_to "動画一覧", boards_path, class: 'nav-link', active: :exclusive %></li>
-          <li><%= active_link_to "投稿動画一覧", boards_registration_path, class: 'nav-link', active: :exclusive %></li>
-          <li><%= active_link_to '動画新規登録', new_board_path, class: 'nav-link', active: :exclusive %></li>
-          <li><%= active_link_to '問い合わせ', new_contact_path, class: 'nav-link', active: :exclusive %></li>
-          <li><%= active_link_to 'ログアウト', logout_path, class: 'nav-link', method: :delete, active: :exclusive %></li>
-      </ul>
-    </nav>
+<header>
+  <nav class='navbar bg-secondary justify-content-end'>
+    <ul class='nav'>
+        <li><%= active_link_to "動画一覧", boards_path, class: 'nav-link', active: :exclusive %></li>
+        <li><%= active_link_to "投稿動画一覧", boards_registration_path, class: 'nav-link', active: :exclusive %></li>
+        <li><%= active_link_to '動画新規登録', new_board_path, class: 'nav-link', active: :exclusive %></li>
+        <li><%= active_link_to '問い合わせ', new_contact_path, class: 'nav-link', active: :exclusive %></li>
+        <li><%= active_link_to 'ログアウト', logout_path, class: 'nav-link', method: :delete, active: :exclusive %></li>
+    </ul>
+  </nav>
 
-    <div class="header-background d-flex align-items-center" >
-      <div class="title-text text-center">
-        <h1>CATching</h1>
-        <p>~押し猫が見つかる動画検索サイト~</p>
-      </div>
+  <div class="header-background d-flex align-items-center" >
+    <div class="title-text text-center">
+      <h1>CATching</h1>
+      <p>~押し猫が見つかる動画検索サイト~</p>
     </div>
-  </header>
+  </div>
+</header>
+<main>
