@@ -6,7 +6,7 @@
 			</div>
 			<div class='card-body'>
 				<h5 class='card-title'><%= board.title %></h5>
-				<p class='card-text'><%= board.content.truncate(60) %></p>
+				<p class='card-text'><%= board.content %></p>
 				<div class='text-right'>
 					<% if logged_in? && current_user.own?(board)%>
 						<%= link_to '編集', edit_board_path(board), class: 'btn-flat-border' %>

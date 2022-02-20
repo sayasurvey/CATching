@@ -2,11 +2,11 @@ module ApplicationHelper
   def default_meta_tags
     {
       site: 'CATching',
-      title: '押しネコが見つかる動画検索サイト',
+      title: '推し猫が見つかる動画まとめサイト',
       reverse: true,
       charset: 'utf-8',
-      description: '押しネコが見つかる動画検索サイト',
-      keywords: '猫, 動画, 検索',
+      description: '動画まとめサイト',
+      keywords: '猫, ネコ, ねこ, 動画, まとめ',
       canonical: request.original_url,
       separator: '|',
       icon: [
